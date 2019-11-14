@@ -1,5 +1,5 @@
 module.exports = {
-	avatarImage: 'https://pbs.twimg.com/profile_images/1179165544831946753/aHkVFZo3_400x400.jpg',
+	avatarImage: 'https://gallery.mailchimp.com/926cb477483bcd8122304bc56/images/869dd09d-c0ca-4fff-bb85-5c36d31ac6fe.jpeg',
 	getStarted: 'Olá! Eu sou o Robô do AppCívico.',
 	share: {
 		txt1: 'Encaminhe nosso bot!',
@@ -11,8 +11,8 @@ module.exports = {
 		},
 	},
 	greetings: {
-		text1: 'Olá! Eu sou o Robô do AppCívico',
-		text2: 'Me mande uma mensagem caso tenha alguma dúvida =)',
+		text1: 'Olá, bem-vindo ao nosso espaço! Estamos aqui para atender você, tirar suas dúvidas e bater um papo sobre o trabalho da Genilda. Fique à vontade para mandar uma mensagem ou acesse nosso whatsapp https://whats.link/timegenilda.',
+		text2: 'Me mande uma mensagem caso tenha alguma dúvida.',
 	},
 	mainMenu: {
 		text1: [
@@ -22,8 +22,10 @@ module.exports = {
 		],
 	},
 	issueText: {
-		success: ['Eu sou um robô e estou aprendendo não entendi sua mensagem.',
-			'Sou um robô e meus algoritmos ainda estão aprendendo. Não entendi sua mensagem, mas logo te respondo =)',
+		success: [
+			' Obrigado por sua mensagem. Vamos juntos trabalhar por nossa gente!',
+			// 'Eu sou um robô e estou aprendendo não entendi sua mensagem.',
+			// 'Sou um robô e meus algoritmos ainda estão aprendendo. Não entendi sua mensagem, mas logo te respondo =)',
 		],
 		failure: 'Eu sou um robô e estou aprendendo! Não entendi sua mensagem',
 	},
