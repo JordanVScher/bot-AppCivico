@@ -11,8 +11,8 @@ module.exports = {
 		},
 	},
 	greetings: {
-		text1: 'Olá, bem-vindo ao nosso espaço! Estamos aqui para atender você, tirar suas dúvidas e bater um papo sobre o trabalho da Genilda. Fique à vontade para mandar uma mensagem ou acesse nosso whatsapp https://whats.link/timegenilda.',
-		text2: 'Me mande uma mensagem caso tenha alguma dúvida.',
+		text1: 'Olá, bem-vindo ao nosso espaço! Estamos aqui para atender você, tirar suas dúvidas e bater um papo sobre o trabalho da Genilda.',
+		text2: 'Fique à vontade para mandar uma mensagem ou acesse nosso whatsapp https://whats.link/timegenilda.',
 	},
 	mainMenu: {
 		text1: [
