@@ -9,8 +9,8 @@ async function sendAnswer(context) { // send answer from posicionamento
 	if (context.state.currentTheme && ((context.state.currentTheme.answer && context.state.currentTheme.answer.length > 0)
 		|| (context.state.currentTheme.saved_attachment_type !== null && context.state.currentTheme.saved_attachment_id !== null))) {
 		try {
-			await assistenteAPI.setIntentStatus(context.state.politicianData.user_id, context.session.user.id, context.state.currentIntent, 1);
-			await assistenteAPI.logAskedEntity(context.session.user.id, context.state.politicianData.user_id, context.state.currentTheme.entities[0].id);
+			await assistenteAPI.setIntentStatus(context.state.chatbotData.user_id, context.session.user.id, context.state.currentIntent, 1);
+			await assistenteAPI.logAskedEntity(context.session.user.id, context.state.chatbotData.user_id, context.state.currentTheme.entities[0].id);
 
 			await help.sendTextAnswer(context, context.state.currentTheme);
 			await help.sendAttachment(context, context.state.currentTheme);

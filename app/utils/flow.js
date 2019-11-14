@@ -12,6 +12,7 @@ module.exports = {
 	},
 	greetings: {
 		text1: 'Olá! Eu sou o Robô do AppCívico',
+		text2: 'Me mande uma mensagem caso tenha alguma dúvida =)',
 	},
 	mainMenu: {
 		text1: [
@@ -27,7 +28,7 @@ module.exports = {
 		failure: 'Eu sou um robô e estou aprendendo! Não entendi sua mensagem',
 	},
 	notifications: {
-		on: 'Legal! Estarei te interando das novidades! Se quiser parar de receber nossas novidades, clique na opção "Parar Notificações 🛑" no menu abaixo. ⬇️',
-		off: 'Você quem manda. Não estarei mais te enviando nenhuma notificação. Se quiser voltar a receber nossas novidades, clique na opção "Ligar Notificações 👌" no menu abaixo. ⬇️',
+		on: 'Legal! Estarei te interando das novidades! Se quiser parar de receber nossas novidades, clique na opção "Parar Notificações 🛑" no menu ≡ abaixo. ⬇️',
+		off: 'Você quem manda. Não estarei mais te enviando nenhuma notificação. Se quiser voltar a receber nossas novidades, clique na opção "Ligar Notificações 👌" no menu ≡ abaixo. ⬇️',
 	},
 };

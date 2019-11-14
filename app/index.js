@@ -6,10 +6,10 @@ const handler = require('./handler');
 const requests = require('./requests');
 
 const config = require('./bottender.config.js').messenger;
-const { getPoliticianData } = require('./chatbot_api');
+const { getChatbotData } = require('./chatbot_api');
 
 const mapPageToAccessToken = async (pageId) => {
-	const perfilData = await getPoliticianData(pageId);
+	const perfilData = await getChatbotData(pageId);
 	return perfilData.fb_access_token;
 };
 

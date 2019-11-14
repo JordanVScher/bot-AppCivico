@@ -101,6 +101,21 @@ function getRandomArray(array) {
 	return array[Math.floor((Math.random() * array.length))];
 }
 
+async function buildRecipientObj(context) {
+	const recipient = {
+		fb_id: context.session.user.id,
+		name: `${context.session.user.first_name} ${context.session.user.last_name}`,
+		picture: context.session.user.profile_pic,
+		// origin_dialog: 'greetings',
+		// session: JSON.stringify(context.state),
+	};
+
+	if (context.state.email) recipient.email = context.state.alunaMail;
+	if (context.state.cpf) recipient.cpf = context.state.cpf;
+
+	return recipient;
+}
+
 module.exports = {
 	Sentry,
 	moment,
@@ -112,4 +127,5 @@ module.exports = {
 	addChar,
 	sendAttachment,
 	sendTextAnswer,
+	buildRecipientObj,
 };

@@ -136,7 +136,7 @@ async function sendShare(context, cardData) {
 
 async function sendMsgFromAssistente(context, code, defaultMsgs) {
 	try {
-		const answers = context.state && context.state.politicianData && context.state.politicianData.answers ? context.state.politicianData.answers : false;
+		const answers = context.state && context.state.chatbotData && context.state.chatbotData.answers ? context.state.chatbotData.answers : false;
 		let msgToSend;
 
 		if (answers && answers.length > 0) {
