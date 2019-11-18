@@ -141,14 +141,18 @@ async function sendMsgFromAssistente(context, code, defaultMsgs) {
 
 		if (answers && answers.length > 0) {
 			const currentMsg = answers.find(x => x.code === code);
-			if (currentMsg && currentMsg.content) msgToSend = currentMsg.content;
+			if (currentMsg && currentMsg.content) {
+				msgToSend = currentMsg.content.replace(/\t/g, '').split(/\r?\n/);
+			}
+		}
+
+		if (!msgToSend || msgToSend.length === 0) {
+			msgToSend = defaultMsgs;
 		}
 
 		if (msgToSend && msgToSend.length > 0) {
-			await context.sendText(msgToSend);
-		} else if (defaultMsgs && defaultMsgs.length > 0) {
-			for (const msg of defaultMsgs) { // eslint-disable-line
-				await context.sendText(msg);
+			for (const msg of msgToSend) { // eslint-disable-line
+				await context.sendText(msgToSend);
 			}
 		}
 	} catch (error) {
@@ -160,3 +164,6 @@ async function sendMsgFromAssistente(context, code, defaultMsgs) {
 module.exports = {
 	sendShare, getErrorQR, getVoltarQR, getQR, sendSequenceMsgs, sendCardWithLink, cardLinkNoImage, capQR, buildButton, sendMsgFromAssistente,
 };
+
+
+sendMsgFromAssistente('', 'greetings', []);
