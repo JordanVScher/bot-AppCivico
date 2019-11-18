@@ -11,8 +11,8 @@ module.exports = {
 		},
 	},
 	greetings: {
-		text1: 'Olá, bem-vindo ao nosso espaço! Estamos aqui para atender você, tirar suas dúvidas e bater um papo sobre o trabalho da Genilda.',
-		text2: 'Fique à vontade para mandar uma mensagem ou acesse nosso whatsapp https://whats.link/timegenilda.',
+		text1: 'Olá, bem-vindo ao nosso espaço! Estamos aqui para atender você, tirar suas dúvidas e bater um papo sobre o nosso trabalho.',
+		text2: '',
 	},
 	mainMenu: {
 		text1: [
@@ -23,9 +23,9 @@ module.exports = {
 	},
 	issueText: {
 		success: [
-			' Obrigado por sua mensagem. Vamos juntos trabalhar por nossa gente!',
-			// 'Eu sou um robô e estou aprendendo não entendi sua mensagem.',
-			// 'Sou um robô e meus algoritmos ainda estão aprendendo. Não entendi sua mensagem, mas logo te respondo =)',
+			'Obrigado por sua mensagem. Vamos juntos trabalhar por nossa gente!',
+			'Eu sou um robô e estou aprendendo não entendi sua mensagem.',
+			'Sou um robô e meus algoritmos ainda estão aprendendo. Não entendi sua mensagem, mas logo te respondo =)',
 		],
 		failure: 'Eu sou um robô e estou aprendendo! Não entendi sua mensagem',
 	},

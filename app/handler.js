@@ -2,6 +2,7 @@ const assistenteAPI = require('./chatbot_api');
 const event = require('./utils/event');
 const { createIssue } = require('./utils/sendIssue');
 const flow = require('./utils/flow');
+const attach = require('./utils/attach');
 const help = require('./utils/helper');
 const dialogs = require('./utils/dialogs');
 const DF = require('./utils/dialogFlow');
@@ -16,8 +17,8 @@ module.exports = async (context) => {
 		switch (context.state.dialog) {
 		case 'greetings':
 			await context.sendImage(flow.avatarImage);
-			await context.sendText(flow.greetings.text1);
-			await dialogs.sendMainMenu(context, flow.greetings.text2);
+			await attach.sendMsgFromAssistente(context, 'greetings', [flow.greetings.text1]);
+			// await dialogs.sendMainMenu(context, flow.greetings.text2);
 			break;
 		case 'createIssueDirect':
 			await createIssue(context);
