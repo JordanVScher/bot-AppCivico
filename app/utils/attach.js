@@ -152,7 +152,7 @@ async function sendMsgFromAssistente(context, code, defaultMsgs) {
 
 		if (msgToSend && msgToSend.length > 0) {
 			for (const msg of msgToSend) { // eslint-disable-line
-				await context.sendText(msgToSend);
+				await context.sendText(msg);
 			}
 		}
 	} catch (error) {
