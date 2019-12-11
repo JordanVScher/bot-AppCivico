@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const { MessengerBot, FileSessionStore, withTyping } = require('bottender');
-const { createServer } = require('bottender/restify');
+const restify = require('restify');
 const handler = require('./handler');
 const requests = require('./requests');
 
@@ -28,7 +28,7 @@ if (messageWaiting) { bot.use(withTyping({ delay: messageWaiting })); }
 
 bot.onEvent(handler);
 
-const server = createServer(bot, { verifyToken: config.verifyToken });
+const server = restify.createServer(bot, { verifyToken: config.verifyToken });
 
 server.post('/add-label', async (req, res) => {
 	await requests.addLabel(req, res);
@@ -37,6 +37,8 @@ server.post('/add-label', async (req, res) => {
 server.get('/name-id', async (req, res) => {
 	await requests.getNameFBID(req, res);
 });
+
+server.get(`/${process.env.FACEBOOK_SERVER_VERIFY}.html`, restify.plugins.serveStatic({ directory: './html' }));
 
 server.listen(process.env.API_PORT, () => {
 	console.log(`Server is running on ${process.env.API_PORT} port...`);

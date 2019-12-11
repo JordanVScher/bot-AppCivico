@@ -8,7 +8,7 @@
     "pm2_add": "pm2 start app/index.js  --name \"bot-AppCivico\"",
     "restart": "pm2 restart \"bot-AppCivico\" --update-env",
     "logs": "pm2 logs \"bot-AppCivico\" --lines 1000",
-    "reload": "docker rm -f bot_appcivico; bash build-container.sh; bash run-container.sh",
+    "reload": "docker rm -f bot_appcivico; bash build-container.sh; bash run-container.sh;",
     "d_logs": "docker logs -f --tail 1000 bot_appcivico"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "requisition": "^1.7.0",
+    "restify": "^8.5.0",
     "surveymonkey": "^1.1.0",
     "util": "^0.12.0",
     "util.promisify": "^1.0.0"
