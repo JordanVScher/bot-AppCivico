@@ -1,10 +1,12 @@
 require('dotenv').config();
 
 const { MessengerBot, FileSessionStore, withTyping } = require('bottender');
+const { createServer } = require('bottender/restify');
 const restify = require('restify');
 const handler = require('./handler');
 const requests = require('./requests');
 
+restify.createServer = createServer;
 const config = require('./bottender.config.js').messenger;
 const { getChatbotData } = require('./chatbot_api');
 
