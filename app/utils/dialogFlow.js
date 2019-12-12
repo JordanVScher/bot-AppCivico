@@ -2,7 +2,7 @@ const dialogflow = require('dialogflow');
 const MaAPI = require('../chatbot_api');
 const { createIssue } = require('./sendIssue');
 const { sendAnswer } = require('./sendAnswer');
-const { sendMainMenu } = require('./dialogs');
+const dialogs = require('./dialogs');
 const help = require('./helper');
 
 /* Initialize DialogFlow agent */
@@ -54,7 +54,7 @@ async function checkPosition(context) {
 	switch (context.state.intentName) {
 	case 'Default Welcome Intent':
 	case 'Greetings': // add specific intents here
-		await context.setState({ dialog: 'greetings' });
+		await dialogs.sendGreetings(context);
 		break;
 	case 'Fallback': // didn't understand what was typed
 		await createIssue(context);
@@ -72,7 +72,7 @@ async function checkPosition(context) {
 		} else { // no answers in knowledge_base (We know the entity but politician doesn't have a position)
 			await createIssue(context);
 		}
-		await sendMainMenu(context);
+		await dialogs.sendMainMenu(context);
 		break;
 	}
 }
