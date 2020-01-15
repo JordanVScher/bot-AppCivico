@@ -152,7 +152,7 @@ async function sendMsgFromAssistente(context, code, defaultMsgs) {
 
 		if (msgToSend && msgToSend.length > 0) {
 			for (const msg of msgToSend) { // eslint-disable-line
-				await context.sendText(msg);
+				await context.sendText(msg.replace('<NOME>', context.session.user.first_name));
 			}
 		}
 	} catch (error) {
